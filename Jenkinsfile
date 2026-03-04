@@ -44,12 +44,6 @@ pipeline {
             }
         }
 
-        stage("Approval") {
-            steps {
-                input message: "Do you want to deploy ${IMAGE_NAME} to production?", ok: "Approve"
-            }
-        }
-
         stage("Deploy") {
             steps {
                 sh """
